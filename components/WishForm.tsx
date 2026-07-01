@@ -70,7 +70,49 @@ export default function WishForm() {
       className="rounded-3xl border border-[var(--bora-sage)] bg-white/80 p-6 shadow-[0_20px_60px_-30px_rgba(58,79,68,0.5)] backdrop-blur sm:p-10"
     >
       <div className="space-y-5">
-        {/* 1 · El deseo */}
+        {/* 1 · Datos opcionales */}
+        <div className="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label
+              htmlFor="name"
+              className="block text-sm font-semibold text-[var(--bora-forest)]"
+            >
+              Tu nombre{" "}
+              <span className="font-normal text-[var(--bora-forest)]/50">
+                (opcional)
+              </span>
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              maxLength={120}
+              placeholder="¿Cómo te llamas?"
+              className="mt-2 w-full rounded-2xl border border-[var(--bora-forest)]/20 bg-[var(--bora-cream)] px-4 py-3 text-[var(--bora-forest)] placeholder:text-[var(--bora-forest)]/40 focus:border-[var(--bora-forest)] focus:outline-none focus:ring-4 focus:ring-[var(--bora-aqua)]/40"
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-sm font-semibold text-[var(--bora-forest)]"
+            >
+              Email{" "}
+              <span className="font-normal text-[var(--bora-forest)]/50">
+                (opcional)
+              </span>
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              maxLength={160}
+              placeholder="Por si tu idea se hace realidad"
+              className="mt-2 w-full rounded-2xl border border-[var(--bora-forest)]/20 bg-[var(--bora-cream)] px-4 py-3 text-[var(--bora-forest)] placeholder:text-[var(--bora-forest)]/40 focus:border-[var(--bora-forest)] focus:outline-none focus:ring-4 focus:ring-[var(--bora-aqua)]/40"
+            />
+          </div>
+        </div>
+
+        {/* 2 · El deseo */}
         <div>
           <label
             htmlFor="message"
@@ -118,42 +160,6 @@ export default function WishForm() {
             <input key={s} type="hidden" name="tags" value={s} />
           ))}
         </fieldset>
-
-        {/* 3 · Datos opcionales */}
-        <div className="grid gap-5 sm:grid-cols-2">
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-semibold text-[var(--bora-forest)]"
-            >
-              Tu nombre <span className="font-normal text-[var(--bora-forest)]/50">(opcional)</span>
-            </label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              maxLength={120}
-              placeholder="¿Cómo te llamas?"
-              className="mt-2 w-full rounded-2xl border border-[var(--bora-forest)]/20 bg-[var(--bora-cream)] px-4 py-3 text-[var(--bora-forest)] placeholder:text-[var(--bora-forest)]/40 focus:border-[var(--bora-forest)] focus:outline-none focus:ring-4 focus:ring-[var(--bora-aqua)]/40"
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-semibold text-[var(--bora-forest)]"
-            >
-              Email <span className="font-normal text-[var(--bora-forest)]/50">(opcional)</span>
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              maxLength={160}
-              placeholder="Por si tu idea se hace realidad"
-              className="mt-2 w-full rounded-2xl border border-[var(--bora-forest)]/20 bg-[var(--bora-cream)] px-4 py-3 text-[var(--bora-forest)] placeholder:text-[var(--bora-forest)]/40 focus:border-[var(--bora-forest)] focus:outline-none focus:ring-4 focus:ring-[var(--bora-aqua)]/40"
-            />
-          </div>
-        </div>
 
         {/* Honeypot (hidden from humans) */}
         <input
