@@ -69,34 +69,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FORM ─────────────────────────────────────────────── */}
+      {/* ── FORM + CIERRE (foto aérea + negro) ───────────────── */}
       <section
         id="deseo"
-        className="relative scroll-mt-8 border-t border-[var(--bora-cream)]/10 bg-black/15 px-6 py-16 sm:py-28"
+        className="relative scroll-mt-8 overflow-hidden px-6 py-16 sm:py-28"
       >
-        <div className="mx-auto max-w-2xl">
-          <div className="mb-10 text-center">
-            <span className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--bora-sage)]">
-              Tu deseo
-            </span>
-            <h2 className="mt-3 font-display text-4xl text-[var(--bora-cream)] sm:text-5xl">
-              El Rincón de los Deseos
-            </h2>
-          </div>
-          <WishForm />
-        </div>
-      </section>
-
-      {/* ── CLOSING (aérea) ──────────────────────────────────── */}
-      <section className="relative overflow-hidden px-6 py-24 text-center sm:py-28">
         <div
           className="pointer-events-none absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/bora-aerea.jpg')" }}
           aria-hidden="true"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/88 via-black/78 to-black/95" />
-        <div className="relative">
-          <p className="mx-auto max-w-3xl text-3xl font-light leading-snug tracking-tight sm:text-4xl">
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/90 via-black/82 to-black/95" />
+
+        <div className="relative mx-auto max-w-3xl">
+          <div className="mx-auto max-w-2xl">
+            <div className="mb-10 text-center">
+              <span className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--bora-sage)]">
+                Tu deseo
+              </span>
+              <h2 className="mt-3 font-display text-4xl text-[var(--bora-cream)] sm:text-5xl">
+                El Rincón de los Deseos
+              </h2>
+            </div>
+            <WishForm />
+          </div>
+
+          <p className="mx-auto mt-16 max-w-3xl text-center text-3xl font-light leading-snug tracking-tight sm:mt-20 sm:text-4xl">
             Las mejores experiencias son las que se crean{" "}
             <span className="font-extrabold text-[var(--bora-aqua)]">
               entre todos
