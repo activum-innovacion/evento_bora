@@ -35,11 +35,6 @@ export default function Home() {
             El Rincón de los Deseos
           </span>
 
-          <p className="bora-rise mt-8 max-w-2xl text-lg text-[var(--bora-cream)]/90 drop-shadow-[0_2px_16px_rgba(0,0,0,0.4)] sm:text-xl">
-            ¿Qué te gustaría vivir aquí? Déjanos tu deseo y ayúdanos a imaginar
-            todo lo que este espacio puede llegar a ser.
-          </p>
-
           <a
             href="#deseo"
             className="bora-rise mt-10 inline-flex items-center gap-2 rounded-full bg-[var(--bora-cream)] px-8 py-4 text-base font-semibold text-[var(--bora-forest)] transition hover:bg-white"
