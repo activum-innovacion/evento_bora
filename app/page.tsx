@@ -25,7 +25,7 @@ export default function Home() {
         {/* photo background */}
         <div
           className="pointer-events-none absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/bora-aerea.png')" }}
+          style={{ backgroundImage: "url('/images/bora-aerea.jpg')" }}
           aria-hidden="true"
         />
         {/* green gradient overlay for legibility */}
@@ -138,7 +138,7 @@ export default function Home() {
       <section className="relative overflow-hidden px-6 py-24 text-center text-[var(--bora-cream)] sm:py-28">
         <div
           className="pointer-events-none absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/bora-piscina.png')" }}
+          style={{ backgroundImage: "url('/images/bora-piscina.jpg')" }}
           aria-hidden="true"
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--bora-forest)]/90 via-[var(--bora-forest)]/85 to-[var(--bora-forest)]/95" />
