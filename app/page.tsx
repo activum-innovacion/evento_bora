@@ -131,7 +131,7 @@ export default function Home() {
           style={{ backgroundImage: "url('/images/bora-aerea.jpg')" }}
           aria-hidden="true"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--bora-forest)]/92 via-[var(--bora-forest)]/88 to-[var(--bora-forest)]/95" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/88 via-black/78 to-black/95" />
         <div className="relative">
           <span className="mx-auto mb-8 block h-1.5 w-16 rounded-full bg-[var(--bora-blush)]" />
           <p className="mx-auto max-w-2xl text-lg text-[var(--bora-cream)]/75">
