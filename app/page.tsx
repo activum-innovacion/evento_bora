@@ -35,22 +35,6 @@ export default function Home() {
             El Rincón de los Deseos
           </span>
 
-          <div className="bora-rise mt-8 max-w-2xl space-y-4 text-base leading-relaxed text-[var(--bora-cream)]/90 drop-shadow-[0_2px_16px_rgba(0,0,0,0.5)] sm:text-lg">
-            <p>
-              Este{" "}
-              <span className="font-semibold text-[var(--bora-cream)]">
-                Rincón de los Deseos
-              </span>{" "}
-              está pensado para que podáis compartir ideas, sugerencias y
-              propuestas para poder seguir caminando juntos de la mejor manera.
-            </p>
-            <p>
-              Toda idea, sugerencia o actividad es bienvenida y anónima. También
-              hemos pensado en algunas categorías de actividades que quizás
-              puedan encajar con lo que esperas de Bora Residencial.
-            </p>
-          </div>
-
           <a
             href="#deseo"
             className="bora-rise mt-10 inline-flex items-center gap-2 rounded-full bg-[var(--bora-cream)] px-8 py-4 text-base font-semibold text-[var(--bora-forest)] transition hover:bg-white"
@@ -75,7 +59,7 @@ export default function Home() {
 
         <div className="relative mx-auto max-w-3xl">
           <div className="mx-auto max-w-2xl">
-            <div className="mb-10 text-center">
+            <div className="mb-8 text-center">
               <span className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--bora-sage)]">
                 Tu deseo
               </span>
@@ -83,6 +67,24 @@ export default function Home() {
                 El Rincón de los Deseos
               </h2>
             </div>
+
+            <div className="mb-10 space-y-4 text-center text-base leading-relaxed text-[var(--bora-cream)]/85 sm:text-lg">
+              <p>
+                Este{" "}
+                <span className="font-semibold text-[var(--bora-cream)]">
+                  Rincón de los Deseos
+                </span>{" "}
+                está pensado para que podáis compartir ideas, sugerencias y
+                propuestas para poder seguir caminando juntos de la mejor
+                manera.
+              </p>
+              <p>
+                Toda idea, sugerencia o actividad es bienvenida y anónima.
+                También hemos pensado en algunas categorías de actividades que
+                quizás puedan encajar con lo que esperas de Bora Residencial.
+              </p>
+            </div>
+
             <WishForm />
           </div>
 
