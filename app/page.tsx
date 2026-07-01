@@ -50,52 +50,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── HISTORIA (textos del mailing) ────────────────────── */}
+      {/* ── HISTORIA ─────────────────────────────────────────── */}
       <section className="relative px-6 py-16 sm:py-28">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[var(--bora-sage)]">
-            Una nueva etapa merece un primer encuentro
+        <div className="mx-auto max-w-2xl space-y-5 text-center text-lg leading-relaxed text-[var(--bora-cream)]/85">
+          <p>
+            Este{" "}
+            <span className="font-semibold text-[var(--bora-cream)]">
+              Rincón de los Deseos
+            </span>{" "}
+            está pensado para que podáis compartir ideas, sugerencias y
+            propuestas para poder seguir caminando juntos de la mejor manera.
           </p>
-
-          <h2 className="mt-6 text-4xl font-light leading-[1.1] tracking-tight sm:text-6xl">
-            El mejor verano
-            <span className="mt-2 block font-extrabold text-[var(--bora-aqua)]">
-              empieza en casa.
-            </span>
-          </h2>
-
-          <div className="mx-auto mt-8 max-w-2xl space-y-5 text-lg leading-relaxed text-[var(--bora-cream)]/80">
-            <p>
-              Este comienzo de etapa queremos construirlo con vosotros. Este{" "}
-              <span className="font-semibold text-[var(--bora-cream)]">
-                Rincón de los Deseos
-              </span>{" "}
-              está pensado para que podáis compartir ideas, sugerencias y
-              propuestas para poder seguir caminando juntos de la mejor manera.
-            </p>
-            <p>
-              Toda idea, sugerencia o actividad es bienvenida, puede ser anónima
-              o no, lo que prefieras. También hemos pensado en algunas
-              categorías de actividades que quizás puedan encajar con lo que
-              esperas de Bora Residencial.
-            </p>
-            <p className="font-semibold text-[var(--bora-cream)]">
-              ¡Muchas gracias por seguir confiando en nosotros!
-            </p>
-          </div>
-
-          {/* palette ribbon */}
-          <div className="mx-auto mt-12 flex max-w-md items-center justify-center gap-3">
-            {["--bora-sage", "--bora-aqua", "--bora-blush", "--bora-cream"].map(
-              (c) => (
-                <span
-                  key={c}
-                  className="h-2.5 w-16 rounded-full"
-                  style={{ background: `var(${c})` }}
-                />
-              )
-            )}
-          </div>
+          <p>
+            Toda idea, sugerencia o actividad es bienvenida y anónima. También
+            hemos pensado en algunas categorías de actividades que quizás puedan
+            encajar con lo que esperas de Bora Residencial.
+          </p>
         </div>
       </section>
 
