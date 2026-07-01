@@ -66,9 +66,9 @@ export default function Home() {
             El Rincón de los Deseos
           </span>
 
-          <h1 className="bora-rise mt-8 max-w-4xl font-display text-4xl leading-[1.1] tracking-tight sm:text-6xl md:text-7xl">
+          <h1 className="bora-rise mt-8 max-w-4xl text-4xl font-light leading-[1.1] tracking-tight sm:text-6xl md:text-7xl">
             Esta azotea acaba de empezar su historia…
-            <span className="mt-3 block text-[var(--bora-aqua)]">
+            <span className="mt-3 block font-extrabold text-[var(--bora-aqua)]">
               y queremos escribirla contigo.
             </span>
           </h1>
@@ -91,8 +91,9 @@ export default function Home() {
       {/* ── INVITATION ───────────────────────────────────────── */}
       <section className="relative px-6 py-20 sm:py-28">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-3xl leading-snug text-[var(--bora-forest)] sm:text-4xl">
-            ¿Una sesión de yoga al amanecer? ¿Cine de verano bajo las estrellas?
+          <h2 className="text-3xl font-light leading-snug tracking-tight text-[var(--bora-forest)] sm:text-4xl">
+            ¿Una sesión de <span className="font-bold">yoga al amanecer</span>?
+            ¿<span className="font-bold">Cine de verano</span> bajo las estrellas?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-[var(--bora-forest)]/75">
             ¿Catas, conciertos, talleres, fiestas temáticas o encuentros entre
@@ -140,12 +141,15 @@ export default function Home() {
           Porque las mejores experiencias son las que se crean entre todos.
           Quién sabe… quizás la próxima actividad de Bora empiece con tu idea.
         </p>
-        <p className="mx-auto mt-10 max-w-3xl font-display text-3xl leading-snug sm:text-4xl">
+        <p className="mx-auto mt-10 max-w-3xl text-3xl font-light leading-snug tracking-tight sm:text-4xl">
           Hay lugares donde la gente{" "}
-          <span className="text-[var(--bora-aqua)]">vive</span>.
+          <span className="font-extrabold text-[var(--bora-aqua)]">vive</span>.
           <br />
           Y lugares donde la gente{" "}
-          <span className="text-[var(--bora-blush)]">quiere vivir</span>.
+          <span className="font-extrabold text-[var(--bora-blush)]">
+            quiere vivir
+          </span>
+          .
         </p>
       </section>
 

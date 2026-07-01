@@ -19,7 +19,7 @@
   --color-cream: var(--bora-cream);
 
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
@@ -30,9 +30,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Titulares: Montserrat en peso fuerte y tracking apretado (estilo mailing Bora) */
 .font-display {
   font-family: var(--font-display);
-  font-optical-sizing: auto;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 /* soft entrance animation */
