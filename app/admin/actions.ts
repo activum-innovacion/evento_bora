@@ -2,7 +2,14 @@
 
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { ADMIN_COOKIE, checkPassword, createToken } from "@/lib/auth";
+import { revalidatePath } from "next/cache";
+import {
+  ADMIN_COOKIE,
+  checkPassword,
+  createToken,
+  isAuthenticated,
+} from "@/lib/auth";
+import { createAdminClient } from "@/lib/supabase";
 
 export type LoginState = { error?: string };
 
@@ -35,4 +42,19 @@ export async function logout() {
   const store = await cookies();
   store.delete(ADMIN_COOKIE);
   redirect("/admin");
+}
+
+export async function deleteWish(formData: FormData) {
+  if (!(await isAuthenticated())) {
+    return;
+  }
+  const id = String(formData.get("id") ?? "").trim();
+  if (!id) return;
+
+  const supabase = createAdminClient();
+  const { error } = await supabase.from("wishes").delete().eq("id", id);
+  if (error) {
+    console.error("Error borrando deseo:", error.message);
+  }
+  revalidatePath("/admin");
 }

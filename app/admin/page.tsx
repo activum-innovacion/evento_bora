@@ -3,6 +3,7 @@ import { isAuthenticated } from "@/lib/auth";
 import { createAdminClient, type Wish } from "@/lib/supabase";
 import { logout } from "./actions";
 import LoginForm from "./LoginForm";
+import DeleteButton from "./DeleteButton";
 
 export const dynamic = "force-dynamic";
 
@@ -114,6 +115,9 @@ export default async function AdminPage() {
                     <th className="px-5 py-4 font-semibold">Deseo</th>
                     <th className="px-5 py-4 font-semibold">Intereses</th>
                     <th className="px-5 py-4 font-semibold">Email</th>
+                    <th className="px-5 py-4 text-right font-semibold">
+                      Acciones
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -151,6 +155,9 @@ export default async function AdminPage() {
                       </td>
                       <td className="px-5 py-4 text-[var(--bora-forest)]/70">
                         {w.email || "—"}
+                      </td>
+                      <td className="px-5 py-4 text-right">
+                        <DeleteButton id={w.id} />
                       </td>
                     </tr>
                   ))}
