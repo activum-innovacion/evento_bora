@@ -126,11 +126,17 @@ export default function Home() {
 
       {/* ── CLOSING ──────────────────────────────────────────── */}
       <section className="bg-[var(--bora-forest)] px-6 py-20 text-center text-[var(--bora-cream)] sm:py-24">
-        <p className="mx-auto max-w-2xl font-display text-2xl leading-relaxed sm:text-3xl">
+        <span className="mx-auto mb-8 block h-1.5 w-16 rounded-full bg-[var(--bora-blush)]" />
+        <p className="mx-auto max-w-2xl text-lg text-[var(--bora-cream)]/70">
           Porque las mejores experiencias son las que se crean entre todos.
-        </p>
-        <p className="mx-auto mt-6 max-w-xl text-[var(--bora-cream)]/70">
           Quién sabe… quizás la próxima actividad de Bora empiece con tu idea.
+        </p>
+        <p className="mx-auto mt-10 max-w-3xl font-display text-3xl leading-snug sm:text-4xl">
+          Hay lugares donde la gente{" "}
+          <span className="text-[var(--bora-aqua)]">vive</span>.
+          <br />
+          Y lugares donde la gente{" "}
+          <span className="text-[var(--bora-blush)]">quiere vivir</span>.
         </p>
       </section>
 
