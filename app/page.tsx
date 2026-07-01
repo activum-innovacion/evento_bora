@@ -22,8 +22,8 @@ export default function Home() {
           style={{ backgroundImage: "url('/images/bora-aerea.jpg')" }}
           aria-hidden="true"
         />
-        {/* overlay: legible arriba/abajo, foto cálida visible en el centro */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--bora-forest)]/88 via-[var(--bora-forest)]/68 to-[var(--bora-forest)]/92" />
+        {/* overlay negro: legible arriba/abajo, foto cálida visible en el centro */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/85 via-black/50 to-black/90" />
 
         {/* marco fino decorativo */}
         <div className="pointer-events-none absolute inset-3 border border-[var(--bora-cream)]/25 sm:inset-5" />
