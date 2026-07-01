@@ -37,7 +37,7 @@ export default function RootLayout({
       lang="es"
       className={`${montserrat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[var(--bora-mist)] text-[var(--bora-forest)] font-sans">
+      <body className="min-h-full flex flex-col bg-[var(--bora-forest)] text-[var(--bora-cream)] font-sans">
         {children}
       </body>
     </html>

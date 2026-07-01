@@ -1,4 +1,3 @@
-import Image from "next/image";
 import WishForm from "@/components/WishForm";
 
 // Deterministic star positions (avoids hydration mismatch)
@@ -17,23 +16,30 @@ const STARS = [
   { top: "14%", left: "66%", s: 2, d: "2.7s" },
 ];
 
+/* eslint-disable @next/next/no-img-element */
+function Logo({ className }: { className?: string }) {
+  return (
+    <img
+      src="/logo.svg"
+      alt="Residencial Bora"
+      className={`h-auto [filter:brightness(0)_invert(1)] ${className ?? ""}`}
+    />
+  );
+}
+
 export default function Home() {
   return (
-    <main className="flex-1">
-      {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-[var(--bora-forest)] text-[var(--bora-cream)]">
-        {/* photo background */}
+    <main className="flex-1 bg-[var(--bora-forest)] text-[var(--bora-cream)]">
+      {/* ── HERO (piscina) ───────────────────────────────────── */}
+      <section className="relative overflow-hidden">
+        {/* photo background — la piscina protagonista */}
         <div
           className="pointer-events-none absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/bora-aerea.jpg')" }}
+          style={{ backgroundImage: "url('/images/bora-piscina.jpg')" }}
           aria-hidden="true"
         />
-        {/* green gradient overlay for legibility */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--bora-forest)]/75 via-[var(--bora-forest)]/70 to-[var(--bora-forest)]/92" />
-
-        {/* glow accents */}
-        <div className="pointer-events-none absolute -top-32 -right-24 h-96 w-96 rounded-full bg-[var(--bora-aqua)]/20 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-[var(--bora-blush)]/15 blur-3xl" />
+        {/* overlay: oscuro arriba (legibilidad) y más claro abajo (se ve la piscina) */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--bora-forest)]/95 via-[var(--bora-forest)]/80 to-[var(--bora-forest)]/45" />
 
         {/* starfield */}
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
@@ -53,14 +59,7 @@ export default function Home() {
         </div>
 
         <div className="relative mx-auto flex min-h-[100svh] max-w-5xl flex-col items-center justify-center px-6 py-20 text-center sm:py-24">
-          <Image
-            src="/logo.svg"
-            alt="Residencial Bora"
-            width={150}
-            height={86}
-            priority
-            className="mb-10 h-auto w-[120px] opacity-95 [filter:brightness(0)_invert(1)] sm:w-[140px]"
-          />
+          <Logo className="mb-10 w-[120px] opacity-95 sm:w-[140px]" />
 
           <span className="bora-rise inline-flex max-w-full items-center gap-2 rounded-full border border-[var(--bora-cream)]/25 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[var(--bora-sage)] sm:px-5 sm:text-xs sm:tracking-[0.35em]">
             El Rincón de los Deseos
@@ -73,7 +72,7 @@ export default function Home() {
             </span>
           </h1>
 
-          <p className="bora-rise mt-8 max-w-2xl text-lg text-[var(--bora-cream)]/80 sm:text-xl">
+          <p className="bora-rise mt-8 max-w-2xl text-lg text-[var(--bora-cream)]/85 sm:text-xl">
             ¿Qué te gustaría vivir aquí? Déjanos tu deseo y ayúdanos a imaginar
             todo lo que este espacio puede llegar a ser.
           </p>
@@ -88,45 +87,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── INVITATION ───────────────────────────────────────── */}
+      {/* ── HISTORIA (textos del mailing) ────────────────────── */}
       <section className="relative px-6 py-16 sm:py-28">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-light leading-snug tracking-tight text-[var(--bora-forest)] sm:text-4xl">
-            ¿Una sesión de <span className="font-bold">yoga al amanecer</span>?
-            ¿<span className="font-bold">Cine de verano</span> bajo las estrellas?
-          </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-[var(--bora-forest)]/75">
-            ¿Catas, conciertos, talleres, fiestas temáticas o encuentros entre
-            vecinos? Escribe tu idea, propuesta o experiencia soñada para la
-            azotea o para la vida en Bora.
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[var(--bora-sage)]">
+            Una nueva etapa merece un primer encuentro
           </p>
-        </div>
 
-        {/* palette ribbon */}
-        <div className="mx-auto mt-14 flex max-w-md items-center justify-center gap-3">
-          {["--bora-sage", "--bora-aqua", "--bora-blush", "--bora-forest"].map(
-            (c) => (
-              <span
-                key={c}
-                className="h-2.5 w-16 rounded-full"
-                style={{ background: `var(${c})` }}
-              />
-            )
-          )}
+          <h2 className="mt-6 text-4xl font-light leading-[1.1] tracking-tight sm:text-6xl">
+            El mejor verano
+            <span className="mt-2 block font-extrabold text-[var(--bora-aqua)]">
+              empieza en casa.
+            </span>
+          </h2>
+
+          <p className="mx-auto mt-8 max-w-2xl text-lg text-[var(--bora-cream)]/80">
+            Es el comienzo de algo que queremos construir con vosotros. ¿Una
+            sesión de <span className="font-semibold text-[var(--bora-cream)]">yoga al amanecer</span>?
+            ¿<span className="font-semibold text-[var(--bora-cream)]">Cine de verano</span> bajo
+            las estrellas? ¿Catas, conciertos, talleres, fiestas temáticas o
+            encuentros entre vecinos?
+          </p>
+
+          {/* palette ribbon */}
+          <div className="mx-auto mt-12 flex max-w-md items-center justify-center gap-3">
+            {["--bora-sage", "--bora-aqua", "--bora-blush", "--bora-cream"].map(
+              (c) => (
+                <span
+                  key={c}
+                  className="h-2.5 w-16 rounded-full"
+                  style={{ background: `var(${c})` }}
+                />
+              )
+            )}
+          </div>
         </div>
       </section>
 
       {/* ── FORM ─────────────────────────────────────────────── */}
       <section
         id="deseo"
-        className="relative scroll-mt-8 bg-[var(--bora-sage)]/40 px-6 py-16 sm:py-28"
+        className="relative scroll-mt-8 border-t border-[var(--bora-cream)]/10 bg-black/15 px-6 py-16 sm:py-28"
       >
         <div className="mx-auto max-w-2xl">
           <div className="mb-10 text-center">
-            <span className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--bora-forest)]/60">
+            <span className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--bora-sage)]">
               Tu deseo
             </span>
-            <h2 className="mt-3 font-display text-4xl text-[var(--bora-forest)] sm:text-5xl">
+            <h2 className="mt-3 font-display text-4xl text-[var(--bora-cream)] sm:text-5xl">
               El Rincón de los Deseos
             </h2>
           </div>
@@ -134,43 +142,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CLOSING ──────────────────────────────────────────── */}
-      <section className="relative overflow-hidden px-6 py-24 text-center text-[var(--bora-cream)] sm:py-28">
+      {/* ── CLOSING (aérea) ──────────────────────────────────── */}
+      <section className="relative overflow-hidden px-6 py-24 text-center sm:py-28">
         <div
           className="pointer-events-none absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/bora-piscina.jpg')" }}
+          style={{ backgroundImage: "url('/images/bora-aerea.jpg')" }}
           aria-hidden="true"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--bora-forest)]/90 via-[var(--bora-forest)]/85 to-[var(--bora-forest)]/95" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--bora-forest)]/92 via-[var(--bora-forest)]/88 to-[var(--bora-forest)]/95" />
         <div className="relative">
-        <span className="mx-auto mb-8 block h-1.5 w-16 rounded-full bg-[var(--bora-blush)]" />
-        <p className="mx-auto max-w-2xl text-lg text-[var(--bora-cream)]/70">
-          Porque las mejores experiencias son las que se crean entre todos.
-          Quién sabe… quizás la próxima actividad de Bora empiece con tu idea.
-        </p>
-        <p className="mx-auto mt-10 max-w-3xl text-3xl font-light leading-snug tracking-tight sm:text-4xl">
-          Hay lugares donde la gente{" "}
-          <span className="font-extrabold text-[var(--bora-aqua)]">vive</span>.
-          <br />
-          Y lugares donde la gente{" "}
-          <span className="font-extrabold text-[var(--bora-blush)]">
-            quiere vivir
-          </span>
-          .
-        </p>
+          <span className="mx-auto mb-8 block h-1.5 w-16 rounded-full bg-[var(--bora-blush)]" />
+          <p className="mx-auto max-w-2xl text-lg text-[var(--bora-cream)]/75">
+            Porque las mejores experiencias son las que se crean entre todos.
+            Quién sabe… quizás la próxima actividad de Bora empiece con tu idea.
+          </p>
+          <p className="mx-auto mt-10 max-w-3xl text-3xl font-light leading-snug tracking-tight sm:text-4xl">
+            Hay lugares donde la gente{" "}
+            <span className="font-extrabold text-[var(--bora-aqua)]">vive</span>.
+            <br />
+            Y lugares donde la gente{" "}
+            <span className="font-extrabold text-[var(--bora-blush)]">
+              quiere vivir
+            </span>
+            .
+          </p>
         </div>
       </section>
 
       {/* ── FOOTER ───────────────────────────────────────────── */}
       <footer className="bg-[var(--bora-forest)] px-6 pb-12 pt-4">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-3 border-t border-[var(--bora-cream)]/15 pt-8 text-center">
-          <Image
-            src="/logo.svg"
-            alt="Residencial Bora"
-            width={90}
-            height={52}
-            className="h-auto w-[80px] opacity-80 [filter:brightness(0)_invert(1)]"
-          />
+          <Logo className="w-[80px] opacity-80" />
           <p className="text-xs text-[var(--bora-cream)]/50">
             Residencial Bora · Granada
           </p>
