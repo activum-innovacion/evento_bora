@@ -52,7 +52,7 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="relative mx-auto flex min-h-[92vh] max-w-5xl flex-col items-center justify-center px-6 py-24 text-center">
+        <div className="relative mx-auto flex min-h-[100svh] max-w-5xl flex-col items-center justify-center px-6 py-20 text-center sm:py-24">
           <Image
             src="/logo.svg"
             alt="Residencial Bora"
@@ -62,7 +62,7 @@ export default function Home() {
             className="mb-10 h-auto w-[120px] opacity-95 [filter:brightness(0)_invert(1)] sm:w-[140px]"
           />
 
-          <span className="bora-rise inline-flex items-center gap-2 rounded-full border border-[var(--bora-cream)]/25 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-[var(--bora-sage)]">
+          <span className="bora-rise inline-flex max-w-full items-center gap-2 rounded-full border border-[var(--bora-cream)]/25 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[var(--bora-sage)] sm:px-5 sm:text-xs sm:tracking-[0.35em]">
             El Rincón de los Deseos
           </span>
 
@@ -89,7 +89,7 @@ export default function Home() {
       </section>
 
       {/* ── INVITATION ───────────────────────────────────────── */}
-      <section className="relative px-6 py-20 sm:py-28">
+      <section className="relative px-6 py-16 sm:py-28">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-light leading-snug tracking-tight text-[var(--bora-forest)] sm:text-4xl">
             ¿Una sesión de <span className="font-bold">yoga al amanecer</span>?
@@ -119,7 +119,7 @@ export default function Home() {
       {/* ── FORM ─────────────────────────────────────────────── */}
       <section
         id="deseo"
-        className="relative scroll-mt-8 bg-[var(--bora-sage)]/40 px-6 py-20 sm:py-28"
+        className="relative scroll-mt-8 bg-[var(--bora-sage)]/40 px-6 py-16 sm:py-28"
       >
         <div className="mx-auto max-w-2xl">
           <div className="mb-10 text-center">
