@@ -29,23 +29,16 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-3 border border-[var(--bora-cream)]/25 sm:inset-5" />
 
         <div className="relative mx-auto flex min-h-[100svh] max-w-5xl flex-col items-center justify-center px-6 py-20 text-center sm:py-24">
-          <Logo className="mb-8 w-[150px] drop-shadow-[0_2px_16px_rgba(0,0,0,0.35)] sm:w-[190px]" />
+          <Logo className="mb-10 w-[130px] opacity-95 drop-shadow-[0_2px_16px_rgba(0,0,0,0.35)] sm:w-[150px]" />
 
-          <div className="bora-rise flex flex-col items-center gap-1.5">
-            <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-[var(--bora-cream)] sm:text-base">
-              B·OOL Party
-            </p>
-            <p className="text-[0.7rem] font-medium uppercase tracking-[0.25em] text-[var(--bora-sage)] sm:text-xs">
-              03 Julio · 18:00 – 21:00
-            </p>
-          </div>
+          <span className="bora-rise inline-flex max-w-full items-center gap-2 rounded-full border border-[var(--bora-cream)]/30 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[var(--bora-sage)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] sm:px-5 sm:text-xs sm:tracking-[0.35em]">
+            El Rincón de los Deseos
+          </span>
 
-          <h1 className="bora-rise mt-8 max-w-3xl text-3xl font-light leading-[1.12] tracking-tight drop-shadow-[0_2px_16px_rgba(0,0,0,0.4)] sm:text-5xl md:text-6xl">
-            Bora acaba de empezar su historia…
-            <span className="mt-2 block font-extrabold text-[var(--bora-aqua)]">
-              y queremos escribirla contigo.
-            </span>
-          </h1>
+          <p className="bora-rise mt-8 max-w-2xl text-lg text-[var(--bora-cream)]/90 drop-shadow-[0_2px_16px_rgba(0,0,0,0.4)] sm:text-xl">
+            ¿Qué te gustaría vivir aquí? Déjanos tu deseo y ayúdanos a imaginar
+            todo lo que este espacio puede llegar a ser.
+          </p>
 
           <a
             href="#deseo"
