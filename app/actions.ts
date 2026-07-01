@@ -28,8 +28,11 @@ export async function submitWish(
     return { ok: true };
   }
 
-  if (!message) {
-    return { ok: false, error: "Escribe tu deseo antes de enviarlo." };
+  if (!message && tags.length === 0) {
+    return {
+      ok: false,
+      error: "Escribe tu deseo o elige alguna idea de las de abajo.",
+    };
   }
   if (message.length > MAX_MESSAGE) {
     return { ok: false, error: "Tu mensaje es demasiado largo." };
@@ -38,10 +41,16 @@ export async function submitWish(
     return { ok: false, error: "El correo no parece válido." };
   }
 
+  // Si no escribe texto pero elige ideas, construimos el deseo a partir de ellas
+  // (la columna message es NOT NULL).
+  const finalMessage = message
+    ? message.slice(0, MAX_MESSAGE)
+    : `Me gustaría: ${tags.join(", ")}`;
+
   try {
     const supabase = createAdminClient();
     const { error } = await supabase.from("wishes").insert({
-      message: message.slice(0, MAX_MESSAGE),
+      message: finalMessage,
       name: name ? name.slice(0, MAX_NAME) : null,
       email: email ? email.slice(0, MAX_EMAIL) : null,
       tags: tags.length ? tags : null,

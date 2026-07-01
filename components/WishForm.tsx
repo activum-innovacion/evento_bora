@@ -50,8 +50,8 @@ export default function WishForm() {
           ¡Gracias por soñar con nosotros!
         </h3>
         <p className="mx-auto mt-4 max-w-md text-[var(--bora-forest)]/75">
-          Tu deseo ya forma parte de la historia de esta azotea. Quién sabe…
-          quizás la próxima actividad de Bora empiece con tu idea.
+          Tu deseo ya forma parte de la historia de Bora. Quién sabe… quizás la
+          próxima actividad empiece con tu idea.
         </p>
         <button
           onClick={() => window.location.reload()}
@@ -69,55 +69,57 @@ export default function WishForm() {
       action={formAction}
       className="rounded-3xl border border-[var(--bora-sage)] bg-white/80 p-6 shadow-[0_20px_60px_-30px_rgba(58,79,68,0.5)] backdrop-blur sm:p-10"
     >
-      {/* Inspiration chips */}
-      <fieldset>
-        <legend className="text-sm font-semibold uppercase tracking-[0.15em] text-[var(--bora-forest)]/60">
-          ¿Qué te gustaría vivir aquí?
-        </legend>
-        <div className="mt-4 flex flex-wrap gap-2.5">
-          {IDEAS.map((idea) => {
-            const active = selected.includes(idea);
-            return (
-              <button
-                type="button"
-                key={idea}
-                onClick={() => toggle(idea)}
-                aria-pressed={active}
-                className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
-                  active
-                    ? "border-[var(--bora-forest)] bg-[var(--bora-forest)] text-[var(--bora-cream)]"
-                    : "border-[var(--bora-forest)]/25 bg-transparent text-[var(--bora-forest)] hover:border-[var(--bora-forest)]/60 hover:bg-[var(--bora-sage)]/40"
-                }`}
-              >
-                {idea}
-              </button>
-            );
-          })}
-        </div>
-        {selected.map((s) => (
-          <input key={s} type="hidden" name="tags" value={s} />
-        ))}
-      </fieldset>
-
-      <div className="mt-8 space-y-5">
+      <div className="space-y-5">
+        {/* 1 · El deseo */}
         <div>
           <label
             htmlFor="message"
             className="block text-sm font-semibold text-[var(--bora-forest)]"
           >
-            Tu deseo, idea o experiencia soñada <span className="text-[#b06a86]">*</span>
+            Tu deseo, idea o experiencia soñada{" "}
+            <span className="text-[#b06a86]">*</span>
           </label>
           <textarea
             id="message"
             name="message"
-            required
             rows={4}
             maxLength={2000}
-            placeholder="Escribe tu idea, propuesta o experiencia soñada para la azotea o para la vida en Bora…"
+            placeholder="Escribe tu idea, propuesta o experiencia soñada para la vida en Bora…"
             className="mt-2 w-full resize-y rounded-2xl border border-[var(--bora-forest)]/20 bg-[var(--bora-cream)] px-4 py-3 text-[var(--bora-forest)] placeholder:text-[var(--bora-forest)]/40 focus:border-[var(--bora-forest)] focus:outline-none focus:ring-4 focus:ring-[var(--bora-aqua)]/40"
           />
         </div>
 
+        {/* 2 · Etiquetas / ideas */}
+        <fieldset>
+          <legend className="text-sm font-medium text-[var(--bora-forest)]/70">
+            ¿Sin deseo? Te damos alguna idea 👇
+          </legend>
+          <div className="mt-3 flex flex-wrap gap-2.5">
+            {IDEAS.map((idea) => {
+              const active = selected.includes(idea);
+              return (
+                <button
+                  type="button"
+                  key={idea}
+                  onClick={() => toggle(idea)}
+                  aria-pressed={active}
+                  className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
+                    active
+                      ? "border-[var(--bora-forest)] bg-[var(--bora-forest)] text-[var(--bora-cream)]"
+                      : "border-[var(--bora-forest)]/25 bg-transparent text-[var(--bora-forest)] hover:border-[var(--bora-forest)]/60 hover:bg-[var(--bora-sage)]/40"
+                  }`}
+                >
+                  {idea}
+                </button>
+              );
+            })}
+          </div>
+          {selected.map((s) => (
+            <input key={s} type="hidden" name="tags" value={s} />
+          ))}
+        </fieldset>
+
+        {/* 3 · Datos opcionales */}
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
             <label

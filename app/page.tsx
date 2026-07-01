@@ -1,21 +1,5 @@
 import WishForm from "@/components/WishForm";
 
-// Deterministic star positions (avoids hydration mismatch)
-const STARS = [
-  { top: "12%", left: "8%", s: 3, d: "0s" },
-  { top: "22%", left: "82%", s: 2, d: "1.2s" },
-  { top: "18%", left: "48%", s: 4, d: "0.5s" },
-  { top: "40%", left: "18%", s: 2, d: "2s" },
-  { top: "34%", left: "70%", s: 3, d: "0.8s" },
-  { top: "56%", left: "88%", s: 2, d: "1.6s" },
-  { top: "62%", left: "30%", s: 3, d: "2.4s" },
-  { top: "70%", left: "60%", s: 2, d: "0.3s" },
-  { top: "48%", left: "44%", s: 2, d: "3s" },
-  { top: "28%", left: "26%", s: 2, d: "1s" },
-  { top: "78%", left: "14%", s: 3, d: "1.9s" },
-  { top: "14%", left: "66%", s: 2, d: "2.7s" },
-];
-
 /* eslint-disable @next/next/no-img-element */
 function Logo({ className }: { className?: string }) {
   return (
@@ -32,54 +16,40 @@ export default function Home() {
     <main className="flex-1 bg-[var(--bora-forest)] text-[var(--bora-cream)]">
       {/* ── HERO (piscina) ───────────────────────────────────── */}
       <section className="relative overflow-hidden">
-        {/* photo background — la piscina protagonista */}
+        {/* photo background — edificio al atardecer (estilo mailing) */}
         <div
           className="pointer-events-none absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/bora-piscina.jpg')" }}
+          style={{ backgroundImage: "url('/images/bora-aerea.jpg')" }}
           aria-hidden="true"
         />
-        {/* overlay: oscuro arriba (legibilidad) y más claro abajo (se ve la piscina) */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--bora-forest)]/95 via-[var(--bora-forest)]/80 to-[var(--bora-forest)]/45" />
+        {/* overlay: legible arriba/abajo, foto cálida visible en el centro */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--bora-forest)]/88 via-[var(--bora-forest)]/68 to-[var(--bora-forest)]/92" />
 
-        {/* starfield */}
-        <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-          {STARS.map((st, i) => (
-            <span
-              key={i}
-              className="bora-twinkle absolute rounded-full bg-[var(--bora-sage)]"
-              style={{
-                top: st.top,
-                left: st.left,
-                width: st.s,
-                height: st.s,
-                animationDelay: st.d,
-              }}
-            />
-          ))}
-        </div>
+        {/* marco fino decorativo */}
+        <div className="pointer-events-none absolute inset-3 border border-[var(--bora-cream)]/25 sm:inset-5" />
 
         <div className="relative mx-auto flex min-h-[100svh] max-w-5xl flex-col items-center justify-center px-6 py-20 text-center sm:py-24">
-          <Logo className="mb-10 w-[120px] opacity-95 sm:w-[140px]" />
+          <Logo className="mb-8 w-[150px] drop-shadow-[0_2px_16px_rgba(0,0,0,0.35)] sm:w-[190px]" />
 
-          <span className="bora-rise inline-flex max-w-full items-center gap-2 rounded-full border border-[var(--bora-cream)]/25 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[var(--bora-sage)] sm:px-5 sm:text-xs sm:tracking-[0.35em]">
-            El Rincón de los Deseos
-          </span>
+          <div className="bora-rise flex flex-col items-center gap-1.5">
+            <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-[var(--bora-cream)] sm:text-base">
+              B·OOL Party
+            </p>
+            <p className="text-[0.7rem] font-medium uppercase tracking-[0.25em] text-[var(--bora-sage)] sm:text-xs">
+              03 Julio · 18:00 – 21:00
+            </p>
+          </div>
 
-          <h1 className="bora-rise mt-8 max-w-4xl text-4xl font-light leading-[1.1] tracking-tight sm:text-6xl md:text-7xl">
-            Esta azotea acaba de empezar su historia…
-            <span className="mt-3 block font-extrabold text-[var(--bora-aqua)]">
+          <h1 className="bora-rise mt-8 max-w-3xl text-3xl font-light leading-[1.12] tracking-tight drop-shadow-[0_2px_16px_rgba(0,0,0,0.4)] sm:text-5xl md:text-6xl">
+            Bora acaba de empezar su historia…
+            <span className="mt-2 block font-extrabold text-[var(--bora-aqua)]">
               y queremos escribirla contigo.
             </span>
           </h1>
 
-          <p className="bora-rise mt-8 max-w-2xl text-lg text-[var(--bora-cream)]/85 sm:text-xl">
-            ¿Qué te gustaría vivir aquí? Déjanos tu deseo y ayúdanos a imaginar
-            todo lo que este espacio puede llegar a ser.
-          </p>
-
           <a
             href="#deseo"
-            className="bora-rise mt-12 inline-flex items-center gap-2 rounded-full bg-[var(--bora-cream)] px-8 py-4 text-base font-semibold text-[var(--bora-forest)] transition hover:bg-white"
+            className="bora-rise mt-10 inline-flex items-center gap-2 rounded-full bg-[var(--bora-cream)] px-8 py-4 text-base font-semibold text-[var(--bora-forest)] transition hover:bg-white"
           >
             Dejar mi deseo
             <span aria-hidden="true">↓</span>

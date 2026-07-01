@@ -18,7 +18,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "El Rincón de los Deseos · Residencial Bora",
   description:
-    "Esta azotea acaba de empezar su historia... y queremos escribirla contigo. Déjanos tu deseo para la azotea o para la vida en Bora.",
+    "Bora acaba de empezar su historia... y queremos escribirla contigo. Déjanos tu deseo para la vida en Bora.",
   openGraph: {
     title: "El Rincón de los Deseos · Residencial Bora",
     description:
