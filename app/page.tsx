@@ -80,8 +80,6 @@ export default function Home() {
             <div className="mb-10 space-y-4 text-center text-base leading-relaxed text-[var(--bora-cream)]/85 sm:text-lg">
               <p>
                 Toda idea, sugerencia o actividad es bienvenida y anónima.
-                También hemos pensado en algunas categorías de actividades que
-                quizás puedan encajar con lo que esperas de Bora Residencial.
               </p>
             </div>
 
