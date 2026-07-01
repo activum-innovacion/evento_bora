@@ -96,18 +96,16 @@ export default function Home() {
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/88 via-black/78 to-black/95" />
         <div className="relative">
-          <span className="mx-auto mb-8 block h-1.5 w-16 rounded-full bg-[var(--bora-blush)]" />
-          <p className="mx-auto max-w-2xl text-lg text-[var(--bora-cream)]/75">
-            Porque las mejores experiencias son las que se crean entre todos.
-            Quién sabe… quizás la próxima actividad de Bora empiece con tu idea.
-          </p>
-          <p className="mx-auto mt-10 max-w-3xl text-3xl font-light leading-snug tracking-tight sm:text-4xl">
-            Hay lugares donde la gente{" "}
-            <span className="font-extrabold text-[var(--bora-aqua)]">vive</span>.
+          <p className="mx-auto max-w-3xl text-3xl font-light leading-snug tracking-tight sm:text-4xl">
+            Las mejores experiencias son las que se crean{" "}
+            <span className="font-extrabold text-[var(--bora-aqua)]">
+              entre todos
+            </span>
+            .
             <br />
-            Y lugares donde la gente{" "}
+            Quizás la próxima actividad de Bora empiece con{" "}
             <span className="font-extrabold text-[var(--bora-blush)]">
-              quiere vivir
+              tu idea
             </span>
             .
           </p>
