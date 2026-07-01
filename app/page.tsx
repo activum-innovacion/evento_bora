@@ -35,6 +35,22 @@ export default function Home() {
             El Rincón de los Deseos
           </span>
 
+          <div className="bora-rise mt-8 max-w-2xl space-y-4 text-base leading-relaxed text-[var(--bora-cream)]/90 drop-shadow-[0_2px_16px_rgba(0,0,0,0.5)] sm:text-lg">
+            <p>
+              Este{" "}
+              <span className="font-semibold text-[var(--bora-cream)]">
+                Rincón de los Deseos
+              </span>{" "}
+              está pensado para que podáis compartir ideas, sugerencias y
+              propuestas para poder seguir caminando juntos de la mejor manera.
+            </p>
+            <p>
+              Toda idea, sugerencia o actividad es bienvenida y anónima. También
+              hemos pensado en algunas categorías de actividades que quizás
+              puedan encajar con lo que esperas de Bora Residencial.
+            </p>
+          </div>
+
           <a
             href="#deseo"
             className="bora-rise mt-10 inline-flex items-center gap-2 rounded-full bg-[var(--bora-cream)] px-8 py-4 text-base font-semibold text-[var(--bora-forest)] transition hover:bg-white"
@@ -42,25 +58,6 @@ export default function Home() {
             Dejar mi deseo
             <span aria-hidden="true">↓</span>
           </a>
-        </div>
-      </section>
-
-      {/* ── HISTORIA ─────────────────────────────────────────── */}
-      <section className="relative px-6 py-16 sm:py-28">
-        <div className="mx-auto max-w-2xl space-y-5 text-center text-lg leading-relaxed text-[var(--bora-cream)]/85">
-          <p>
-            Este{" "}
-            <span className="font-semibold text-[var(--bora-cream)]">
-              Rincón de los Deseos
-            </span>{" "}
-            está pensado para que podáis compartir ideas, sugerencias y
-            propuestas para poder seguir caminando juntos de la mejor manera.
-          </p>
-          <p>
-            Toda idea, sugerencia o actividad es bienvenida y anónima. También
-            hemos pensado en algunas categorías de actividades que quizás puedan
-            encajar con lo que esperas de Bora Residencial.
-          </p>
         </div>
       </section>
 
