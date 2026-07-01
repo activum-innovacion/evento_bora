@@ -29,19 +29,13 @@ export async function GET() {
 
   const rows = wishes.map((w) => ({
     Fecha: new Date(w.created_at).toLocaleString("es-ES"),
-    Nombre: w.name ?? "",
     Deseo: w.message,
-    Intereses: (w.tags ?? []).join(", "),
-    Email: w.email ?? "",
   }));
 
   const worksheet = XLSX.utils.json_to_sheet(rows);
   worksheet["!cols"] = [
     { wch: 20 }, // Fecha
-    { wch: 22 }, // Nombre
-    { wch: 70 }, // Deseo
-    { wch: 30 }, // Intereses
-    { wch: 28 }, // Email
+    { wch: 90 }, // Deseo
   ];
 
   const workbook = XLSX.utils.book_new();

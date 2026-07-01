@@ -107,14 +107,11 @@ export default async function AdminPage() {
         {wishes.length > 0 && (
           <div className="overflow-hidden rounded-3xl border border-[var(--bora-forest)]/10 bg-white shadow-sm">
             <div className="overflow-x-auto">
-              <table className="w-full min-w-[720px] border-collapse text-left text-sm">
+              <table className="w-full min-w-[480px] border-collapse text-left text-sm">
                 <thead>
                   <tr className="bg-[var(--bora-sage)]/50 text-[var(--bora-forest)]">
                     <th className="px-5 py-4 font-semibold">Fecha</th>
-                    <th className="px-5 py-4 font-semibold">Nombre</th>
                     <th className="px-5 py-4 font-semibold">Deseo</th>
-                    <th className="px-5 py-4 font-semibold">Intereses</th>
-                    <th className="px-5 py-4 font-semibold">Email</th>
                     <th className="px-5 py-4 text-right font-semibold">
                       Acciones
                     </th>
@@ -129,32 +126,10 @@ export default async function AdminPage() {
                       <td className="whitespace-nowrap px-5 py-4 text-[var(--bora-forest)]/60">
                         {formatDate(w.created_at)}
                       </td>
-                      <td className="px-5 py-4 font-medium">
-                        {w.name || "—"}
-                      </td>
                       <td className="px-5 py-4">
-                        <p className="max-w-md whitespace-pre-wrap">
+                        <p className="max-w-xl whitespace-pre-wrap">
                           {w.message}
                         </p>
-                      </td>
-                      <td className="px-5 py-4">
-                        {w.tags && w.tags.length > 0 ? (
-                          <div className="flex flex-wrap gap-1.5">
-                            {w.tags.map((t) => (
-                              <span
-                                key={t}
-                                className="rounded-full bg-[var(--bora-aqua)]/40 px-2.5 py-1 text-xs text-[var(--bora-forest)]"
-                              >
-                                {t}
-                              </span>
-                            ))}
-                          </div>
-                        ) : (
-                          "—"
-                        )}
-                      </td>
-                      <td className="px-5 py-4 text-[var(--bora-forest)]/70">
-                        {w.email || "—"}
                       </td>
                       <td className="px-5 py-4 text-right">
                         <DeleteButton id={w.id} />
