@@ -22,14 +22,14 @@ export default function Home() {
     <main className="flex-1">
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-[var(--bora-forest)] text-[var(--bora-cream)]">
-        {/* photo background (aparece al añadir public/images/bora-aerea.jpg) */}
+        {/* photo background */}
         <div
           className="pointer-events-none absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/bora-aerea.jpg')" }}
+          style={{ backgroundImage: "url('/images/bora-aerea.png')" }}
           aria-hidden="true"
         />
         {/* green gradient overlay for legibility */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--bora-forest)]/85 via-[var(--bora-forest)]/80 to-[var(--bora-forest)]/95" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--bora-forest)]/75 via-[var(--bora-forest)]/70 to-[var(--bora-forest)]/92" />
 
         {/* glow accents */}
         <div className="pointer-events-none absolute -top-32 -right-24 h-96 w-96 rounded-full bg-[var(--bora-aqua)]/20 blur-3xl" />
@@ -135,7 +135,14 @@ export default function Home() {
       </section>
 
       {/* ── CLOSING ──────────────────────────────────────────── */}
-      <section className="bg-[var(--bora-forest)] px-6 py-20 text-center text-[var(--bora-cream)] sm:py-24">
+      <section className="relative overflow-hidden px-6 py-24 text-center text-[var(--bora-cream)] sm:py-28">
+        <div
+          className="pointer-events-none absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/bora-piscina.png')" }}
+          aria-hidden="true"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--bora-forest)]/90 via-[var(--bora-forest)]/85 to-[var(--bora-forest)]/95" />
+        <div className="relative">
         <span className="mx-auto mb-8 block h-1.5 w-16 rounded-full bg-[var(--bora-blush)]" />
         <p className="mx-auto max-w-2xl text-lg text-[var(--bora-cream)]/70">
           Porque las mejores experiencias son las que se crean entre todos.
@@ -151,6 +158,7 @@ export default function Home() {
           </span>
           .
         </p>
+        </div>
       </section>
 
       {/* ── FOOTER ───────────────────────────────────────────── */}
