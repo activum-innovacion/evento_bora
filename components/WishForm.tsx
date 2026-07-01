@@ -42,7 +42,7 @@ export default function WishForm() {
 
   if (state.ok) {
     return (
-      <div className="bora-rise rounded-3xl border border-[var(--bora-cream)]/15 bg-[var(--bora-forest)] p-10 text-center text-[var(--bora-cream)] shadow-[0_25px_70px_-30px_rgba(0,0,0,0.7)] sm:p-14">
+      <div className="bora-rise rounded-3xl border border-[var(--bora-cream)]/15 bg-[#3a4f44] p-10 text-center text-[var(--bora-cream)] shadow-[0_25px_70px_-30px_rgba(0,0,0,0.7)] sm:p-14">
         <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--bora-cream)]/15 text-3xl text-[var(--bora-cream)]">
           ✦
         </div>
@@ -65,7 +65,7 @@ export default function WishForm() {
     <form
       ref={formRef}
       action={formAction}
-      className="rounded-3xl border border-[var(--bora-cream)]/15 bg-[var(--bora-forest)] p-6 text-[var(--bora-cream)] shadow-[0_25px_70px_-30px_rgba(0,0,0,0.7)] sm:p-10"
+      className="rounded-3xl border border-[var(--bora-cream)]/15 bg-[#3a4f44] p-6 text-[var(--bora-cream)] shadow-[0_25px_70px_-30px_rgba(0,0,0,0.7)] sm:p-10"
     >
       <div className="space-y-5">
         {/* 1 · El deseo */}
