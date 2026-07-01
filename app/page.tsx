@@ -71,13 +71,25 @@ export default function Home() {
             </span>
           </h2>
 
-          <p className="mx-auto mt-8 max-w-2xl text-lg text-[var(--bora-cream)]/80">
-            Es el comienzo de algo que queremos construir con vosotros. ¿Una
-            sesión de <span className="font-semibold text-[var(--bora-cream)]">yoga al amanecer</span>?
-            ¿<span className="font-semibold text-[var(--bora-cream)]">Cine de verano</span> bajo
-            las estrellas? ¿Catas, conciertos, talleres, fiestas temáticas o
-            encuentros entre vecinos?
-          </p>
+          <div className="mx-auto mt-8 max-w-2xl space-y-5 text-lg leading-relaxed text-[var(--bora-cream)]/80">
+            <p>
+              Este comienzo de etapa queremos construirlo con vosotros. Este{" "}
+              <span className="font-semibold text-[var(--bora-cream)]">
+                Rincón de los Deseos
+              </span>{" "}
+              está pensado para que podáis compartir ideas, sugerencias y
+              propuestas para poder seguir caminando juntos de la mejor manera.
+            </p>
+            <p>
+              Toda idea, sugerencia o actividad es bienvenida, puede ser anónima
+              o no, lo que prefieras. También hemos pensado en algunas
+              categorías de actividades que quizás puedan encajar con lo que
+              esperas de Bora Residencial.
+            </p>
+            <p className="font-semibold text-[var(--bora-cream)]">
+              ¡Muchas gracias por seguir confiando en nosotros!
+            </p>
+          </div>
 
           {/* palette ribbon */}
           <div className="mx-auto mt-12 flex max-w-md items-center justify-center gap-3">
