@@ -152,7 +152,7 @@ export default function Home() {
       </section>
 
       {/* ── FOOTER ───────────────────────────────────────────── */}
-      <footer className="bg-[var(--bora-forest)] px-6 pb-12 pt-4">
+      <footer className="bg-black px-6 pb-12 pt-4">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-3 border-t border-[var(--bora-cream)]/15 pt-8 text-center">
           <Logo className="w-[80px] opacity-80" />
           <p className="text-xs text-[var(--bora-cream)]/50">
