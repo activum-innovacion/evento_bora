@@ -22,6 +22,15 @@ export default function Home() {
     <main className="flex-1">
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-[var(--bora-forest)] text-[var(--bora-cream)]">
+        {/* photo background (aparece al añadir public/images/bora-aerea.jpg) */}
+        <div
+          className="pointer-events-none absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/bora-aerea.jpg')" }}
+          aria-hidden="true"
+        />
+        {/* green gradient overlay for legibility */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--bora-forest)]/85 via-[var(--bora-forest)]/80 to-[var(--bora-forest)]/95" />
+
         {/* glow accents */}
         <div className="pointer-events-none absolute -top-32 -right-24 h-96 w-96 rounded-full bg-[var(--bora-aqua)]/20 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-[var(--bora-blush)]/15 blur-3xl" />
