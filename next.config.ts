@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    // Permite servir el logo .svg a través de next/image
+    dangerouslyAllowSVG: true,
+    contentDispositionType: "inline",
+  },
 };
 
 export default nextConfig;

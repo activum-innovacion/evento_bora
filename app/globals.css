@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
+/* ── Residencial Bora · brand tokens ───────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bora-sage: #d8e9d2;   /* verde claro    */
+  --bora-forest: #3a4f44; /* verde oscuro   */
+  --bora-blush: #eed1e1;  /* rosa           */
+  --bora-aqua: #b1e0d7;   /* turquesa       */
+  --bora-mist: #f2f4f7;   /* gris claro     */
+  --bora-cream: #fbfaf6;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-sage: var(--bora-sage);
+  --color-forest: var(--bora-forest);
+  --color-blush: var(--bora-blush);
+  --color-aqua: var(--bora-aqua);
+  --color-mist: var(--bora-mist);
+  --color-cream: var(--bora-cream);
+
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+/* soft entrance animation */
+@keyframes bora-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bora-rise {
+  animation: bora-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes bora-twinkle {
+  0%, 100% { opacity: 0.25; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.bora-twinkle {
+  animation: bora-twinkle 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bora-rise,
+  .bora-twinkle {
+    animation: none;
+  }
+  html { scroll-behavior: auto; }
 }
