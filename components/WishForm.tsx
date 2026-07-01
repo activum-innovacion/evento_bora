@@ -1,18 +1,8 @@
 "use client";
 
-import { useActionState, useRef, useState } from "react";
+import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import { submitWish, type WishFormState } from "@/app/actions";
-
-const IDEAS = [
-  "Yoga al amanecer",
-  "Cine de verano",
-  "Catas",
-  "Conciertos",
-  "Talleres",
-  "Fiestas temáticas",
-  "Encuentros entre vecinos",
-];
 
 const initialState: WishFormState = { ok: false };
 
@@ -31,14 +21,6 @@ function SubmitButton() {
 
 export default function WishForm() {
   const [state, formAction] = useActionState(submitWish, initialState);
-  const [selected, setSelected] = useState<string[]>([]);
-  const formRef = useRef<HTMLFormElement>(null);
-
-  function toggle(idea: string) {
-    setSelected((prev) =>
-      prev.includes(idea) ? prev.filter((i) => i !== idea) : [...prev, idea]
-    );
-  }
 
   if (state.ok) {
     return (
@@ -63,12 +45,10 @@ export default function WishForm() {
 
   return (
     <form
-      ref={formRef}
       action={formAction}
       className="rounded-3xl border border-[var(--bora-cream)]/15 bg-[#3a4f44] p-6 text-[var(--bora-cream)] shadow-[0_25px_70px_-30px_rgba(0,0,0,0.7)] sm:p-10"
     >
       <div className="space-y-5">
-        {/* 1 · El deseo */}
         <div>
           <label
             htmlFor="message"
@@ -80,42 +60,13 @@ export default function WishForm() {
           <textarea
             id="message"
             name="message"
-            rows={4}
+            required
+            rows={5}
             maxLength={2000}
             placeholder="Escribe tu idea, propuesta o experiencia soñada para la vida en Bora…"
             className="mt-2 w-full resize-y rounded-2xl border border-[var(--bora-cream)]/20 bg-black/20 px-4 py-3 text-[var(--bora-cream)] placeholder:text-[var(--bora-cream)]/40 focus:border-[var(--bora-cream)]/60 focus:outline-none focus:ring-4 focus:ring-[var(--bora-aqua)]/30"
           />
         </div>
-
-        {/* 2 · Etiquetas / ideas */}
-        <fieldset>
-          <legend className="text-sm font-medium text-[var(--bora-cream)]/70">
-            ¿Sin deseo? Te damos alguna idea 👇
-          </legend>
-          <div className="mt-3 flex flex-wrap gap-2.5">
-            {IDEAS.map((idea) => {
-              const active = selected.includes(idea);
-              return (
-                <button
-                  type="button"
-                  key={idea}
-                  onClick={() => toggle(idea)}
-                  aria-pressed={active}
-                  className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
-                    active
-                      ? "border-transparent bg-[var(--bora-cream)] text-[var(--bora-forest)]"
-                      : "border-[var(--bora-cream)]/30 bg-transparent text-[var(--bora-cream)] hover:border-[var(--bora-cream)]/60 hover:bg-[var(--bora-cream)]/10"
-                  }`}
-                >
-                  {idea}
-                </button>
-              );
-            })}
-          </div>
-          {selected.map((s) => (
-            <input key={s} type="hidden" name="tags" value={s} />
-          ))}
-        </fieldset>
 
         {/* Honeypot (hidden from humans) */}
         <input
